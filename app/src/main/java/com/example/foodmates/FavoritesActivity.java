@@ -1,5 +1,6 @@
 package com.example.foodmates;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -36,16 +37,17 @@ public class FavoritesActivity extends AppCompatActivity {
         tabLayout = (TabLayout) findViewById(R.id.tabs_favorites);
         tabLayout.setupWithViewPager(viewPager);
 
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav_bar_favorites);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                //Qui in realtà verrà aperta una nuova activity con gli intent
+
+                //Al momento solo la home apre una nuova activity
 
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
-                        Toast.makeText(getApplicationContext(), "Favorite", Toast.LENGTH_SHORT).show();
-                        return true;
+                        Intent intent = new Intent(FavoritesActivity.this, MainActivity.class);
+                        startActivity(intent);
                     case R.id.action_search:
                         Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
                         return true;
@@ -53,14 +55,15 @@ public class FavoritesActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.action_favorites:
-                        Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
-                        return true;
+                        break;
                     case R.id.action_profile:
                         Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         return false;
                 }
+
+                return false;
             }
         });
 
