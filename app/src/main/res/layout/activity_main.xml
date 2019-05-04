@@ -24,6 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/colorAccent"
         app:menu="@menu/bottom_menu"
+        app:labelVisibilityMode="labeled"
         />
 
 </android.support.constraint.ConstraintLayout>

@@ -13,6 +13,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -66,6 +67,10 @@ public class FavoritesActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(3);
+        menuItem.setChecked(true);
 
         Typeface typeface = ResourcesCompat.getFont(FavoritesActivity.this, R.font.nunito_regular);
     }
