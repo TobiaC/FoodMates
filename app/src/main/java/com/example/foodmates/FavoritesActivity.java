@@ -1,10 +1,12 @@
 package com.example.foodmates;
 
+import android.graphics.Typeface;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,7 +30,10 @@ public class FavoritesActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs_favorites);
         tabLayout.setupWithViewPager(viewPager);
+
+        Typeface typeface = ResourcesCompat.getFont(FavoritesActivity.this, R.font.nunito_regular);
     }
+
 
     public static class PageAdapter extends FragmentPagerAdapter{
 
