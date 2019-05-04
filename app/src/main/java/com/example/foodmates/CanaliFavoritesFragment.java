@@ -16,6 +16,7 @@ public class CanaliFavoritesFragment extends Fragment {
 
         //Qui si fa riferimento all'xml
         return inflater.inflate(R.layout.fragment_canali_favorites, container,false);
+
         
     }
 
