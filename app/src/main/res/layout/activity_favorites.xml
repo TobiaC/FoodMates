@@ -22,9 +22,20 @@
         android:id="@+id/pager_favorites"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_bar_favorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tabs_favorites" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_nav_bar_favorites"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/colorAccent"
+        app:menu="@menu/bottom_menu"
+        />
 
 </android.support.constraint.ConstraintLayout>
