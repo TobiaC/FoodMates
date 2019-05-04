@@ -15,6 +15,6 @@ public class CanaliFavoritesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //Qui si fa riferimento all'xml
-        return inflater.inflate(R.layout.fragment_canali_favorites,container,false);
+        return inflater.inflate(R.layout.fragment_canali_favorites, container,false);
     }
 }

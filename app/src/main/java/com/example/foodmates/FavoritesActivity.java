@@ -76,7 +76,6 @@ public class FavoritesActivity extends AppCompatActivity {
                 case 1: return "Canali";
                 default: return "";
             }
-           // return "Section" + (position + 1);
         }
     }
 

@@ -16,6 +16,6 @@ public class RicetteFavoritesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //Qui si fa riferimento all'xml
-        return inflater.inflate(R.layout.fragment_ricette_favorites,container,false);
+        return inflater.inflate(R.layout.fragment_ricette_favorites, container,false);
     }
 }

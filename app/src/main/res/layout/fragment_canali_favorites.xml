@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RicetteFavoritesFragment"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -14,6 +13,5 @@
         android:text="Canali preferiti"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
     <!-- Vedere come iserire text-appearance attribute custom-->
-    //Sono arrivata a 11:20
 
 </LinearLayout>
