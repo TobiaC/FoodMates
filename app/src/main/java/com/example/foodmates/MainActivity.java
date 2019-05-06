@@ -3,6 +3,7 @@ package com.example.foodmates;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -25,26 +26,30 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 //Al momento solo la home apre una nuova activity
+                Fragment selectedFragment = null;
 
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
+                        selectedFragment = new Fragment_favorites();
                         break;
                     case R.id.action_search:
-                        Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
-                        return true;
+                        selectedFragment = new Fragment_favorites();
+                        break;
                     case R.id.action_add:
-                        Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
-                        return true;
+                        selectedFragment = new Fragment_favorites();
+                        break;
                     case R.id.action_favorites:
-                        Intent intent = new Intent(MainActivity.this, FavoritesActivity.class);
-                        startActivity(intent);
+                        selectedFragment = new Fragment_favorites();
+                        break;
                     case R.id.action_profile:
-                        Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
-                        return true;
+                        selectedFragment = new Fragment_favorites();
+                        break;
                     default:
-                        return false;
+                        selectedFragment = new Fragment_favorites();
                 }
-                return false;
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_display,selectedFragment).commit();
+
+                return true;
             }
         });
     }
