@@ -26,31 +26,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-/**
 
- */
 public class Fragment_favorites extends Fragment {
 
 
     ViewPager viewPager;
     PageAdapter pageAdapter;
-    TabLayout tabLayout;
+   TabLayout tabLayout;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        //Qui si fa riferimento all'xml
 
+        View result = inflater.inflate(R.layout.fragment_favorites, container,false);
 
-        View result = inflater.inflate(R.layout.fragment_ricette_favorites, container,false);
+       pageAdapter = new PageAdapter(getFragmentManager());
 
-        pageAdapter = new PageAdapter(getFragmentManager());
-        viewPager = (ViewPager)result.findViewById(R.id.pager_favorites2);
+       viewPager = result.findViewById(R.id.pager_favorites_fragment);
 
-        viewPager.setAdapter(pageAdapter);
+       viewPager.setAdapter(pageAdapter);
 
-        tabLayout = (TabLayout) result.findViewById(R.id.tabs_favorites2);
+       tabLayout = result.findViewById(R.id.tabs_favorites_fragment);
         tabLayout.setupWithViewPager(viewPager);
 
 
