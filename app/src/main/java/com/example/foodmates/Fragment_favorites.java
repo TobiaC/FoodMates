@@ -12,12 +12,17 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.ListFragment;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -27,27 +32,30 @@ import android.widget.Toast;
 public class Fragment_favorites extends Fragment {
 
 
-
     ViewPager viewPager;
     PageAdapter pageAdapter;
     TabLayout tabLayout;
-    BottomNavigationView bottomNavigationView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //Qui si fa riferimento all'xml
-        return inflater.inflate(R.layout.fragment_ricette_favorites, container,false);
-        viewPager = (ViewPager) findViewById(R.id.pager_favorites);
-        pageAdapter = new FavoritesActivity.PageAdapter(getSupportFragmentManager());
+
+
+        View result = inflater.inflate(R.layout.fragment_ricette_favorites, container,false);
+
+        pageAdapter = new PageAdapter(getFragmentManager());
+        viewPager = (ViewPager)result.findViewById(R.id.pager_favorites2);
+
         viewPager.setAdapter(pageAdapter);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs_favorites);
+        tabLayout = (TabLayout) result.findViewById(R.id.tabs_favorites2);
         tabLayout.setupWithViewPager(viewPager);
 
 
-        Typeface typeface = ResourcesCompat.getFont(FavoritesActivity.this, R.font.nunito_regular);
+
+        return result;
     }
 
 
@@ -94,8 +102,4 @@ public class Fragment_favorites extends Fragment {
             }
         }
     }
-
-
-
-
 }
