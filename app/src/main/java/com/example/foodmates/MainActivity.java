@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
+                        
                         fm.beginTransaction().hide(active).show(fragmentHome).commit();
                         active = fragmentHome;
                         return true;
