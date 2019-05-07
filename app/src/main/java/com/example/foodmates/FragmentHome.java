@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class Fragment_home extends Fragment {
+public class FragmentHome extends Fragment {
 
 
     @Nullable
