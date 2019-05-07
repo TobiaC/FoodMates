@@ -26,11 +26,8 @@
         android:background="?android:attr/windowBackground"
         app:menu="@menu/bottom_menu"
         app:labelVisibilityMode="labeled"
-<<<<<<< HEAD
-=======
         app:itemIconTint="@color/bottom_nav_state_color_list"
         app:itemTextColor="@color/bottom_nav_state_color_list"
->>>>>>> develop_bottom_nav
         />
 
 </android.support.constraint.ConstraintLayout>
