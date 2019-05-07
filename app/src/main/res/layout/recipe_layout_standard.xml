@@ -5,7 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
+    <ImageView
+        android:id="@+id/recipeImage"
+        android:layout_width="127dp"
+        android:layout_height="87dp"
+        app:srcCompat="@drawable/torta"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="10dp"
+        android:contentDescription="Placeholder"
+        android:scaleType="centerCrop"
+        />
 
     <TextView
         android:id="@+id/recipeTitle"
@@ -14,10 +25,23 @@
         android:text="TextView"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/recipeImage"
         app:layout_constraintTop_toTopOf="parent"
-
+        android:textSize="20dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="10dp"
         />
+
+    <ImageView
+        android:id="@+id/iconTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/time"
+        app:layout_constraintStart_toEndOf="@id/recipeImage"
+        app:layout_constraintEnd_toStartOf="@id/recipeTime"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"/>
 
     <TextView
         android:id="@+id/recipeTime"
@@ -25,7 +49,33 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iconTime"
         app:layout_constraintTop_toBottomOf="@id/recipeTitle"
+        android:paddingLeft="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom= "6dp"
         />
+    <TextView
+        android:id="@+id/recipeTags"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/recipeImage"
+        app:layout_constraintTop_toBottomOf="@id/recipeTime"
+        android:paddingLeft="8dp"
+        />
+    <TextView
+        android:id="@+id/recipeCanale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/recipeImage"
+        app:layout_constraintTop_toBottomOf="@id/recipeTags"
+        android:paddingLeft="8dp"
+       
+        />
+
+
 </android.support.constraint.ConstraintLayout>
