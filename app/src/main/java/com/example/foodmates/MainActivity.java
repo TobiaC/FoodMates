@@ -1,8 +1,9 @@
 package com.example.foodmates;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,6 +13,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+     Fragment fragmentHome = new FragmentHome();
+     Fragment fragmentFav = new FragmentFavorites();
+    FragmentManager fm = getSupportFragmentManager();
+
+    Fragment active = fragmentHome;
+
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -19,32 +26,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav_bar);
+        fm.beginTransaction().add(R.id.fragment_display, fragmentFav, "2").hide(fragmentFav).commit();
+        fm.beginTransaction().add(R.id.fragment_display,fragmentHome, "1").commit();
+
+        bottomNavigationView = findViewById(R.id.bottom_nav_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-                //Al momento solo la home apre una nuova activity
-
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
-                        break;
+                        fm.beginTransaction().hide(active).show(fragmentHome).commit();
+                        active = fragmentHome;
+                        return true;
                     case R.id.action_search:
-                        Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Favorite", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.action_add:
-                        Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Favorite", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.action_favorites:
-                        Intent intent = new Intent(MainActivity.this, FavoritesActivity.class);
-                        startActivity(intent);
+                        fm.beginTransaction().hide(active).show(fragmentFav).commit();
+                        active = fragmentFav;
+                        return true;
                     case R.id.action_profile:
-                        Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Favorite", Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         return false;
                 }
-                return false;
             }
         });
     }
