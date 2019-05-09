@@ -5,4 +5,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">email</string>
+    <string name="username">username</string>
+    <string name="log_in">Log in</string>
+    <string name="password">password</string>
+    <string name="accedi">accedi</string>
+    <string name="non_sei_registrato">Non sei registrato?</string>
+    <string name="iscriviti">iscriviti</string>
 </resources>
