@@ -29,7 +29,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="20dp"
         android:paddingLeft="8dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
+        android:fontFamily="@font/nunito_regular"
         />
 
     <ImageView
@@ -74,7 +75,7 @@
         app:layout_constraintStart_toEndOf="@id/recipeImage"
         app:layout_constraintTop_toBottomOf="@id/recipeTags"
         android:paddingLeft="8dp"
-       
+       android:paddingBottom="10dp"
         />
 
 
