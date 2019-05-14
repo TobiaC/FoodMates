@@ -1,11 +1,14 @@
 package com.example.foodmates;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -40,8 +43,39 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
         TextView titleTextView = listItemView.findViewById(R.id.recipeTitle);
         titleTextView.setText(currentRecipe.getTitolo());
 
-        TextView TimeTextView = (TextView) listItemView.findViewById(R.id.recipeTime);
-        TimeTextView.setText(currentRecipe.getDurata());
+
+        //Magari questa cosa la togliamo e la implementiamo solo se abbiamo tempo
+        titleTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Hai premuto il titolo", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        TextView timeTextView = (TextView) listItemView.findViewById(R.id.recipeTime);
+        timeTextView.setText(currentRecipe.getDurata());
+
+        TextView difficultyTextView = (TextView) listItemView.findViewById(R.id.recipeDifficulty);
+        
+        if(currentRecipe.getDifficoltà()==1){
+
+            difficultyTextView.setText(getContext().getString(R.string.facile));
+            difficultyTextView.setBackgroundResource(R.color.colorGreen);
+            
+        }else if (currentRecipe.getDifficoltà()==2){
+
+                difficultyTextView.setText(getContext().getString(R.string.medio));
+                difficultyTextView.setBackgroundResource(R.color.colorYellow);
+
+        }else if (currentRecipe.getDifficoltà()==3){
+
+            difficultyTextView.setText(getContext().getString(R.string.difficile));
+            difficultyTextView.setBackgroundResource(R.color.colorRed);
+        }else {
+            difficultyTextView.setText("");
+            difficultyTextView.setBackgroundResource(R.color.colorPrimary);
+        }
+        
 
        /* // Find the ImageView in the list_item.xml layout with the ID list_item_icon
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);

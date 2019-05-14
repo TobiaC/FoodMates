@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     boolean login = true;
+
     Fragment fragmentHome = new FragmentHome();
     Fragment fragmentFav = new FragmentFavorites();
     FragmentManager fm = getSupportFragmentManager();
