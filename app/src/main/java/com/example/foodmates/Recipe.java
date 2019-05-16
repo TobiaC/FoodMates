@@ -15,11 +15,13 @@ public class Recipe {
     private String testo;
     private int difficoltà;
 
-    public Recipe(String titolo, String durata, int difficoltà){
+    public Recipe(String titolo, String durata, int difficoltà, String canale, String tag){
 
         this.titolo = titolo;
         this.durata = durata;
         this.difficoltà = difficoltà;
+        this.canale = canale;
+        this.tag = tag;
 
     }
 
@@ -37,5 +39,13 @@ public class Recipe {
 
     public void setDifficoltà(int difficoltà) {
         this.difficoltà = difficoltà;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public String getCanale() {
+        return canale;
     }
 }

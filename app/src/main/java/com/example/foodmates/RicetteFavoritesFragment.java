@@ -26,26 +26,26 @@ public class RicetteFavoritesFragment extends Fragment {
         ArrayList<Recipe> recipes = new ArrayList<>();
 
 
-        recipes.add(new Recipe("Pollo al miele","30-40 min",1));
-        recipes.add(new Recipe("Pasticcio","30-40 min",1));
-        recipes.add(new Recipe("Pizza","30-40 min",2));
-        recipes.add(new Recipe("Torta al cioccolato","30-40 min",1));
-        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",2));
-        recipes.add(new Recipe("Pollo al miele","30-40 min",2));
-        recipes.add(new Recipe("Pasticcio","30-40 min",1));
-        recipes.add(new Recipe("Pizza","30-40 min",3));
-        recipes.add(new Recipe("Torta al cioccolato","30-40 min",3));
-        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",2));
-        recipes.add(new Recipe("Pollo al miele","30-40 min",1));
-        recipes.add(new Recipe("Pasticcio","30-40 min",2));
-        recipes.add(new Recipe("Pizza","30-40 min",3));
-        recipes.add(new Recipe("Torta al cioccolato","30-40 min",3));
-        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",2));
-        recipes.add(new Recipe("Pollo al miele","30-40 min",1));
-        recipes.add(new Recipe("Pasticcio","30-40 min",3));
-        recipes.add(new Recipe("Pizza","30-40 min",4));
-        recipes.add(new Recipe("Torta al cioccolato","30-40 min",2));
-        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",1));
+        recipes.add(new Recipe("Pollo al miele","30-40 min",1, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pasticcio","30-40 min",1,"Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pizza","30-40 min",2,"Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Torta al cioccolato","30-40 min",1, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",2, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pollo al miele","30-40 min",2, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pasticcio","30-40 min", 1, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pizza","30-40 min",3, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Torta al cioccolato","30-40 min",3, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",2, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pollo al miele","30-40 min",1, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pasticcio","30-40 min",2, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pizza","30-40 min",3, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Torta al cioccolato","30-40 min",3, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",2, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pollo al miele","30-40 min",1, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pasticcio","30-40 min",3, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Pizza","30-40 min",4, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Torta al cioccolato","30-40 min",2, "Ricette gustose", "#fusion #vegano"));
+        recipes.add(new Recipe("Biscotti alle mandorle","30-40 min",1, "Ricette gustose", "#fusion #vegano"));
 
 
         RecipeAdapter recipesAdapter = new RecipeAdapter(getActivity(), recipes);

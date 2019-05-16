@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/recipeImage"
-        android:layout_width="127dp"
-        android:layout_height="87dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
+
+        android:background="@drawable/shape_easy"
         android:contentDescription="Placeholder"
         android:paddingBottom="10dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,16:11"
+        app:layout_constraintEnd_toStartOf="@+id/recipeTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/torta"
-        />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/torta" />
 
     <TextView
         android:id="@+id/recipeTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/recipeImage"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="20dp"
+        android:fontFamily="@font/nunito_regular"
         android:paddingLeft="8dp"
         android:paddingTop="6dp"
-        android:fontFamily="@font/nunito_regular"
-        />
+        android:text="TextView"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/iconTime"
@@ -40,8 +43,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="7dp"
         android:scaleType="centerInside"
-        app:layout_constraintEnd_toStartOf="@id/recipeTime"
-        app:layout_constraintStart_toEndOf="@id/recipeImage"
+        app:layout_constraintStart_toEndOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@id/recipeTitle"
         app:srcCompat="@drawable/clock" />
 
@@ -52,55 +54,62 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="6dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@id/recipeDifficulty"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toStartOf="@id/recipeDifficulty"
         app:layout_constraintStart_toEndOf="@id/iconTime"
         app:layout_constraintTop_toBottomOf="@id/recipeTitle"
-        />
+        android:fontFamily="@font/opensans_regular"/>
 
     <TextView
         android:id="@+id/recipeDifficulty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/colorDarkLight"
+        android:background="@drawable/shape_easy"
         android:paddingLeft="8dp"
-        android:paddingTop="2dp"
         android:paddingRight="8dp"
         android:paddingBottom="2dp"
         android:text="Difficoltà"
         android:textAlignment="center"
         android:textColor="@color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/recipeTime"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/recipeTime"
-        app:layout_constraintTop_toBottomOf="@id/recipeTitle"
-        />
+        app:layout_constraintStart_toEndOf="@id/recipeTime" />
 
     <TextView
         android:id="@+id/recipeTags"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="#dolci #glutenfree"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/recipeImage"
-        app:layout_constraintTop_toBottomOf="@id/recipeTime"
-        android:layout_marginTop="6dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:text="#dolci #glutenfree"
+        android:fontFamily="@font/opensans_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/recipeTime"
 
         />
+
     <TextView
         android:id="@+id/recipeCanale"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="CANALE: Ricette gustose "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/recipeImage"
-        app:layout_constraintTop_toBottomOf="@id/recipeTags"
         android:layout_marginLeft="8dp"
-        android:layout_marginBottom="10dp"
-        android:paddingBottom="12dp"
+        android:text="CANALE: Ricette gustose "
+        android:fontFamily="@font/opensans_regular"
+        android:paddingBottom="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/recipeTags"
 
         />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="127dp" />
 
 
 </android.support.constraint.ConstraintLayout>
