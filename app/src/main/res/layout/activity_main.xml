@@ -24,6 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="?android:attr/windowBackground"
+        android:backgroundTint="@color/colorPrimary"
         app:menu="@menu/bottom_menu"
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/bottom_nav_state_color_list"
