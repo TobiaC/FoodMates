@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     Fragment fragmentHome = new FragmentHome();
     Fragment fragmentFav = new FragmentFavorites();
+    Fragment fragmentProfile = new FragmentProfile();
     FragmentManager fm = getSupportFragmentManager();
 
     Fragment active = fragmentHome;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fm.beginTransaction().add(R.id.fragment_display, fragmentFav, "2").hide(fragmentFav).commit();
+        fm.beginTransaction().add(R.id.fragment_display, fragmentProfile, "2").hide(fragmentProfile).commit();
         fm.beginTransaction().add(R.id.fragment_display,fragmentHome, "1").commit();
 
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);
@@ -70,8 +72,11 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Devi loggarti", Toast.LENGTH_SHORT).show();
                             return true;
                         }else{
-                        Toast.makeText(getApplicationContext(), "Favorite", Toast.LENGTH_SHORT).show();
-                        return true;}
+                            fm.beginTransaction().hide(active).show(fragmentProfile).commit();
+                            active = fragmentProfile;
+                            Toast.makeText(getApplicationContext(), "Va", Toast.LENGTH_SHORT).show();
+
+                            return true;}
                     default:
                         return false;
                 }

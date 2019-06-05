@@ -42,11 +42,13 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
         titleTextView.setText(currentRecipe.getTitolo());
 
 
-        //Magari questa cosa la togliamo e la implementiamo solo se abbiamo tempo
-        titleTextView.setOnClickListener(new View.OnClickListener() {
+        listItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "Hai premuto il titolo", Toast.LENGTH_SHORT).show();
+
+                //Devo passare l'oggetto ricetta alla nuova activity o fragment
+
+                Toast.makeText(getContext(), "Hai premuto la ricetta", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -13,29 +13,29 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+public class FragmentProfile extends Fragment {
 
-public class FragmentFavorites extends Fragment {
 
-
-    ViewPager viewPager;
-    PageAdapter pageAdapter;
-    TabLayout tabLayout;
+   ViewPager viewPager;
+   PageAdapter pageAdapter;
+   TabLayout tabLayout;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        View result = inflater.inflate(R.layout.fragment_favorites, container,false);
+     View result = inflater.inflate(R.layout.fragment_profile, container,false);
 
-       pageAdapter = new PageAdapter(getFragmentManager());
+     pageAdapter = new PageAdapter(getFragmentManager());
 
-       viewPager = result.findViewById(R.id.pager_favorites_fragment);
 
-       viewPager.setAdapter(pageAdapter);
+     viewPager = result.findViewById(R.id.pager_profile_fragment);
+     viewPager.setAdapter(pageAdapter);
 
-       tabLayout = result.findViewById(R.id.tabs_favorites_fragment);
-        tabLayout.setupWithViewPager(viewPager);
+     tabLayout = result.findViewById(R.id.tabs_profile_fragment);
+     tabLayout.setupWithViewPager(viewPager);
+
 
 
 
