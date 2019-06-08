@@ -79,7 +79,7 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
             difficultyTextView.setBackgroundResource(R.drawable.shape_hard);
         }else {
             difficultyTextView.setText("");
-            difficultyTextView.setBackgroundResource(R.color.colorPrimary);
+            difficultyTextView.setBackgroundResource(R.color.white);
         }
         
 
