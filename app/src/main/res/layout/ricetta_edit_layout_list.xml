@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/recipeImage_profilo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_easy"
+        android:contentDescription="Placeholder"
+        android:paddingBottom="10dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,16:11"
+        app:layout_constraintEnd_toStartOf="@+id/recipeTitle_profilo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/torta" />
+
+    <TextView
+        android:id="@+id/recipeTitle_profilo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:paddingLeft="8dp"
+        android:paddingTop="6dp"
+        android:text="TextView"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<Button
+        android:id="@+id/buttonEdit"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle_profilo"
+        android:background="@android:drawable/ic_menu_edit"
+        android:backgroundTintMode="@color/bottom_nav_state_color_list"/>
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toEndOf="@id/buttonEdit"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle_profilo"
+        android:background="@android:drawable/ic_menu_delete"/>
+-->
+
+    <TextView
+        android:id="@+id/buttonEdit"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle_profilo"
+        android:background="@android:drawable/ic_menu_edit" />
+
+
+    <TextView
+        android:id="@+id/buttonDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintStart_toEndOf="@id/buttonEdit"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle_profilo"
+        android:background="@android:drawable/ic_menu_delete"/>
+
+    <TextView
+        android:id="@+id/recipeAddToChannel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:paddingRight="8dp"
+        android:paddingLeft="9dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="2dp"
+        android:background="@drawable/shape_outline"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Aggiugi ad un canale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonDelete"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle_profilo"
+        android:textAlignment="center"/>
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="127dp" />
+
+
+</android.support.constraint.ConstraintLayout>
