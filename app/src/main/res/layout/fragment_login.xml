@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/fragment_login"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:textColor="#ff8f00"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/txtlogin"
+        android:text="LOG IN"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txtusername"
+        app:layout_constraintVertical_chainStyle="packed"/>
+    <EditText
+        android:textAlignment="center"
+        android:hint="USERNAME"
+        android:id="@+id/txtusername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtlogin"
+        app:layout_constraintBottom_toTopOf="@+id/txtpwd"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-</FrameLayout>
+    <EditText
+        android:textAlignment="center"
+        android:hint="PASSWORD"
+        android:id="@+id/txtpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtusername"
+        app:layout_constraintBottom_toTopOf="@+id/btnlogin"/>
+
+    <Button
+        android:background="#ff8f00"
+        android:text="login"
+        android:id="@+id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtpwd"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

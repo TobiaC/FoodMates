@@ -2,5 +2,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profilo">profilo</string>
+    <string name="preferiti">preferiti</string>
+    <string name="aggiungi">aggiungi</string>
+    <string name="cerca">cerca</string>
+    <string name="home">home</string>
+    <string name="facile">facile</string>
+    <string name="medio">facile</string>
+    <string name="difficile">difficile</string>
 
 </resources>

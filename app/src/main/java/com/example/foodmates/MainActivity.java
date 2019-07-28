@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 //Test
@@ -30,12 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         fm.beginTransaction().add(R.id.fragment_display, fragmentFav, "2").hide(fragmentFav).commit();
         fm.beginTransaction().add(R.id.fragment_display, fragmentProfile, "2").hide(fragmentProfile).commit();
         fm.beginTransaction().add(R.id.fragment_display,fragmentHome, "1").commit();
+
+        View viewLogin = findViewById(R.id.fragment_login);
+        View viewSignUp = findViewById(R.id.fragment_signUp);
+
 
         bottomNavigationView = findViewById(R.id.bottom_nav_bar);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
