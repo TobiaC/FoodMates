@@ -13,38 +13,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtlogin"
-        android:text="LOG IN"
+        android:text="@string/log_in"
         android:textSize="36sp"
         android:textAlignment="center"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/txtusername"
+        app:layout_constraintBottom_toTopOf="@id/usernameText"
         app:layout_constraintVertical_chainStyle="packed"/>
     <EditText
         android:textAlignment="center"
-        android:hint="USERNAME"
-        android:id="@+id/txtusername"
+        android:hint="@string/username"
+        android:id="@+id/usernameText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/txtlogin"
-        app:layout_constraintBottom_toTopOf="@+id/txtpwd"
+        app:layout_constraintBottom_toTopOf="@+id/passwordText"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:textAlignment="center"
-        android:hint="PASSWORD"
-        android:id="@+id/txtpwd"
+        android:hint="@string/password"
+        android:id="@+id/passwordText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/txtusername"
-        app:layout_constraintBottom_toTopOf="@+id/btnlogin"/>
+        app:layout_constraintTop_toBottomOf="@+id/usernameText"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"/>
 
     <Button
         android:background="#ff8f00"
-        android:text="login"
-        android:id="@+id/btnlogin"
+        android:text="@string/login"
+        android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/txtpwd"
+        app:layout_constraintTop_toBottomOf="@+id/passwordText"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

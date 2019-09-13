@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:text="Accedi per inserire una ricetta"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:id="@+id/heading"/>
+
+        <Button
+            android:textSize="10dp"
+            android:id="@+id/LogInButton"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="10dp"
+            android:text="accedi"
+            android:layout_below="@id/heading"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:textSize="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/SignUpButton"
+            android:layout_marginTop="70dp"
+            android:layout_alignParentRight="true"
+            android:text="iscriviti"
+            android:layout_below="@id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
