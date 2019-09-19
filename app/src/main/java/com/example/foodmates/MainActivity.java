@@ -3,27 +3,22 @@ package com.example.foodmates;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.support.annotation.FloatRange;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 //Test
 
 public class MainActivity extends AppCompatActivity {
 
     static boolean login = false;
-
-    static Fragment fragmentLogin = new LoginFragment();
+    static Fragment fragmentPressed;
     static Fragment fragmentHome = new FragmentHome();
     static Fragment fragmentFav = new FragmentFavorites();
     static Fragment fragmentProfile = new FragmentProfile();
@@ -39,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         fm.beginTransaction().add(R.id.fragment_display, fragmentFav, "2").hide(fragmentFav).commit();
         fm.beginTransaction().add(R.id.fragment_display, fragmentProfile, "2").hide(fragmentProfile).commit();
         fm.beginTransaction().add(R.id.fragment_display,fragmentHome, "1").commit();
@@ -51,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
-                        fm.beginTransaction().hide(active).show(fragmentHome).commit();
+                        fm.beginTransaction().hide(active).hide(fragmentPressed).show(fragmentHome).commit();
                         active = fragmentHome;
                         return true;
                     case R.id.action_search:
@@ -70,18 +64,20 @@ public class MainActivity extends AppCompatActivity {
                         if(!login){
                             DialogFragment dialog = new FireMissilesDialogFragment();
                             dialog.show(getSupportFragmentManager(), "missiles");
+                            fragmentPressed = fragmentFav;
                             return true;
-                        }else{
-                        fm.beginTransaction().hide(active).show(fragmentFav).commit();
-                        active = fragmentFav;
-                        return true;
+                        } else {
+                            fm.beginTransaction().hide(active).show(fragmentFav).commit();
+                            active = fragmentFav;
+                            return true;
                         }
                     case R.id.action_profile:
                         if(!login){
                             DialogFragment dialog = new FireMissilesDialogFragment();
                             dialog.show(getSupportFragmentManager(), "missiles");
+                            fragmentPressed = fragmentProfile;
                             return true;
-                        }else{
+                        } else {
                             fm.beginTransaction().hide(active).show(fragmentProfile).commit();
                             active = fragmentProfile;
                             return true;
@@ -91,20 +87,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
-
-
-
-
 
     public static class FireMissilesDialogFragment extends DialogFragment {
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
+
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             // Get the layout inflater
             LayoutInflater inflater = requireActivity().getLayoutInflater();
+
 
             // Inflate and set the layout for the dialog
             // Pass null as the parent view because its going in the dialog layout
@@ -114,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int id) {
                             login = true;
+                            getFragmentManager().beginTransaction().hide(active).show(fragmentPressed).commit();
+
                         }
                     })
                     .setNeutralButton("register", new DialogInterface.OnClickListener() {
@@ -156,5 +151,4 @@ public class MainActivity extends AppCompatActivity {
             return builder.create();
         }
     }
-
 }
