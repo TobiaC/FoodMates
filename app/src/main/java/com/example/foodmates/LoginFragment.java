@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 
 public class LoginFragment extends Fragment {
-    private static final String TAG = "LoginfFragment";
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 

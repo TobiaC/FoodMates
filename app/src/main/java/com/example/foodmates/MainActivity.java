@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -20,12 +21,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean login = true;
+    static boolean login = false;
 
     static Fragment fragmentLogin = new LoginFragment();
     static Fragment fragmentHome = new FragmentHome();
-    Fragment fragmentFav = new FragmentFavorites();
-    Fragment fragmentProfile = new FragmentProfile();
+    static Fragment fragmentFav = new FragmentFavorites();
+    static Fragment fragmentProfile = new FragmentProfile();
     public FragmentManager fm = getSupportFragmentManager();
 
     static Fragment active = fragmentHome;
@@ -54,22 +55,21 @@ public class MainActivity extends AppCompatActivity {
                         active = fragmentHome;
                         return true;
                     case R.id.action_search:
-                        Toast.makeText(getApplicationContext(), "Favorite", Toast.LENGTH_SHORT).show();
-                        return true;
+                        if(!login){
+                            DialogFragment dialog = new FireMissilesDialogFragment();
+                            dialog.show(getSupportFragmentManager(), "missiles");
+                            return true;
+                        }
                     case R.id.action_add:
                         if(!login){
                             DialogFragment dialog = new FireMissilesDialogFragment();
                             dialog.show(getSupportFragmentManager(), "missiles");
                             return true;
                         }
-                        else{
-                            DialogFragment dialog = new FireMissilesDialogFragment();
-                            dialog.show(getSupportFragmentManager(), "missiles");
-                            return true;
-                        }
                     case R.id.action_favorites:
                         if(!login){
-                            Toast.makeText(getApplicationContext(), "Devi loggarti", Toast.LENGTH_SHORT).show();
+                            DialogFragment dialog = new FireMissilesDialogFragment();
+                            dialog.show(getSupportFragmentManager(), "missiles");
                             return true;
                         }else{
                         fm.beginTransaction().hide(active).show(fragmentFav).commit();
@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity {
                         return true;}
                     case R.id.action_profile:
                         if(!login){
-                            Toast.makeText(getApplicationContext(), "Devi loggarti", Toast.LENGTH_SHORT).show();
+                            DialogFragment dialog = new FireMissilesDialogFragment();
+                            dialog.show(getSupportFragmentManager(), "missiles");
                             return true;
                         }else{
                             fm.beginTransaction().hide(active).show(fragmentProfile).commit();
@@ -93,35 +94,65 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
     public static class FireMissilesDialogFragment extends DialogFragment {
 
-    @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) { ;
-
-        final FragmentManager fragmentManager = getFragmentManager();
-      //  FragmentTransaction ft = fm.beginTransaction();
-
-            // Use the Builder class for convenient dialog construction
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage("Se vuoi aggiungere una nuova ricetta devi essere iscritto o fare il login")
-                    .setPositiveButton("chiudi", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    })
-                    .setNegativeButton("accedi", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            fragmentManager.beginTransaction().hide(active).show(fragmentLogin).commit();
-                            dismiss();
-                        }
-                    })
-                    .setNeutralButton("registrati", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
+            // Get the layout inflater
+            LayoutInflater inflater = requireActivity().getLayoutInflater();
 
+            // Inflate and set the layout for the dialog
+            // Pass null as the parent view because its going in the dialog layout
+            builder.setView(inflater.inflate(R.layout.login_dialog, null))
+                    // Add action buttons
+                    .setPositiveButton("login", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            login = true;
+                        }
+                    })
+                    .setNeutralButton("register", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            DialogFragment dialog1 = new FireMissilesDialogFragment2();
+                            dialog1.show(getFragmentManager(), "missiles");
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
                         }
                     });
-            // Create the AlertDialog object and return it
+            return builder.create();
+        }
+    }
+
+    public static class FireMissilesDialogFragment2 extends DialogFragment {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            // Get the layout inflater
+            LayoutInflater inflater = requireActivity().getLayoutInflater();
+
+            // Inflate and set the layout for the dialog
+            // Pass null as the parent view because its going in the dialog layout
+            builder.setView(inflater.inflate(R.layout.register_dialog, null))
+                    // Add action buttons
+                    .setPositiveButton("register", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            login = true;
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                        }
+                    });
             return builder.create();
         }
     }

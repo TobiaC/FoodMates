@@ -12,9 +12,10 @@
     <string name="difficile">difficile</string>
     <string name="username">USERNAME</string>
     <string name="password">PASSWORD</string>
-    <string name="login">login</string>
+    <string name="login">Login</string>
     <string name="log_in">LOG IN</string>
     <string name="email">EMAIL</string>
     <string name="sing_up">SING UP</string>
+    <string name="registrati">Registrati</string>
 
 </resources>
