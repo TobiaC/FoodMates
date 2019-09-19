@@ -74,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                         }else{
                         fm.beginTransaction().hide(active).show(fragmentFav).commit();
                         active = fragmentFav;
-                        return true;}
+                        return true;
+                        }
                     case R.id.action_profile:
                         if(!login){
                             DialogFragment dialog = new FireMissilesDialogFragment();
@@ -83,9 +84,8 @@ public class MainActivity extends AppCompatActivity {
                         }else{
                             fm.beginTransaction().hide(active).show(fragmentProfile).commit();
                             active = fragmentProfile;
-                            Toast.makeText(getApplicationContext(), "Va", Toast.LENGTH_SHORT).show();
-
-                            return true;}
+                            return true;
+                        }
                     default:
                         return false;
                 }

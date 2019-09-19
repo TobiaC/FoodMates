@@ -57,7 +57,7 @@
         android:background="@android:drawable/ic_menu_delete"/>
 -->
 
-    <TextView
+    <Button
         android:id="@+id/buttonEdit"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -68,7 +68,7 @@
         android:background="@android:drawable/ic_menu_edit" />
 
 
-    <TextView
+    <Button
         android:id="@+id/buttonDelete"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -78,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@id/recipeTitle_profilo"
         android:background="@android:drawable/ic_menu_delete"/>
 
-    <TextView
+    <Button
         android:id="@+id/recipeAddToChannel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

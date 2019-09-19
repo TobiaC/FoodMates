@@ -16,13 +16,13 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
      * The context is used to inflate the layout file, and the ricetta_layout_list is the data we want
      * to populate into the lists.
      *
-     * @param context        The current context. Used to inflate the layout file.
+     * @param context The current context. Used to inflate the layout file.
      * @param recipes A List of AndroidFlavor objects to display in a ricetta_layout_list
      */
 
-    public RecipeAdapter(Activity context, ArrayList<Recipe> recipes){
+    public RecipeAdapter(Activity context, ArrayList<Recipe> recipes) {
 
-        super(context,0,recipes);
+        super(context, 0, recipes);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
 
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.ricetta_layout_list, parent, false);
         }
@@ -52,7 +52,7 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
             }
         });
 
-        TextView timeTextView =  listItemView.findViewById(R.id.recipeTime);
+        TextView timeTextView = listItemView.findViewById(R.id.recipeTime);
         timeTextView.setText(currentRecipe.getDurata());
 
         TextView tagTextView = listItemView.findViewById(R.id.recipeTags);
@@ -62,22 +62,22 @@ public class RecipeAdapter extends ArrayAdapter<Recipe> {
         canaleView.setText("CANALE: " + currentRecipe.getCanale());
 
 
-        TextView difficultyTextView =  listItemView.findViewById(R.id.recipeDifficulty);
-        
-        if(currentRecipe.getDifficoltà()==1){
+        TextView difficultyTextView = listItemView.findViewById(R.id.recipeDifficulty);
+
+        if (currentRecipe.getDifficoltà() == 1) {
 
             difficultyTextView.setText(getContext().getString(R.string.facile));
             difficultyTextView.setBackgroundResource(R.drawable.shape_easy);
-            
-        }else if (currentRecipe.getDifficoltà()==2){
 
-                difficultyTextView.setText(getContext().getString(R.string.medio));
-                difficultyTextView.setBackgroundResource(R.drawable.shape_medium);
+        } else if (currentRecipe.getDifficoltà() == 2) {
 
-        }else if (currentRecipe.getDifficoltà()==3){
+            difficultyTextView.setText(getContext().getString(R.string.medio));
+            difficultyTextView.setBackgroundResource(R.drawable.shape_medium);
+
+        } else if (currentRecipe.getDifficoltà() == 3) {
             difficultyTextView.setText(getContext().getString(R.string.difficile));
             difficultyTextView.setBackgroundResource(R.drawable.shape_hard);
-        }else {
+        } else {
             difficultyTextView.setText("");
             difficultyTextView.setBackgroundResource(R.color.white);
         }
